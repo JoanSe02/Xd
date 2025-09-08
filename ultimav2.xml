@@ -1,0 +1,609 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+  <head>
+    <link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}"
+          src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}"
+          src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2"/>
+
+    <macrolist>
+    <macro id="nlheader">
+        <table style="width:100%;">
+        <tr>
+            <td align="right" style="font-size:8pt;">Pág. <pagenumber/> de <totalpages/></td>
+        </tr>
+        </table>
+    </macro>
+    <macro id="nlfooter">
+        <table style="width:100%;"><tr><td></td></tr></table>
+    </macro>
+    </macrolist>
+
+
+    <style type="text/css">
+      * { 
+        font-family: NotoSans, sans-serif; 
+        color: #333234; 
+      }
+
+      table { 
+        font-size: 9pt;              
+        border-collapse: collapse; 
+        table-layout: fixed;         
+      }
+      
+      .mt-8 { margin-top: 8px; }
+      .mt-12 { margin-top: 12px; }
+      .mt-15 { margin-top: 15px; }
+
+      .main-title{font-size:12pt;font-weight:bold;display:inline-block;padding:4px 10px;}
+      .title-box{ text-align:left; margin-top:4px; margin-bottom:6px; padding-left:0px; margin-left:-120px; }  
+      .top-grid{ width:100%; table-layout:fixed; border-collapse:collapse; }
+      .top-grid td{ vertical-align:top; padding:0; }
+      .col-left{ width:48%; padding-right:10px; }   
+      .col-right{ width:52%; padding-left:10px; }   
+
+      .brand-wrap{ padding-top:4px; }             
+      .brand-wrap img{ margin-bottom:8px; }
+
+      .company-box{ padding:8px; }  
+      .company-box b{ font-size:11pt; }
+
+      .header-table{
+        width:100%;
+        border:1px solid #5b5b5b;
+        margin-top:0;                 
+        margin-bottom:9.5px;
+      }
+
+      .header-table td{
+        border:1px solid #5b5b5b; padding:4px 6px; vertical-align:top; font-size:8pt;
+      }
+
+      .header-table td:first-child{ width:42%; }
+      .header-table td:first-child .oc-title{ font-weight:bold; text-align:center; background:#f0f0f0; padding:4px 0; }
+      .header-table td:first-child .oc-number{ font-size:10pt; }
+      
+      .info-section {
+        width: 100%;
+        margin-bottom: 8px;
+        padding: 8px;
+        font-size: 11px;
+      }
+      
+      .info-section td {
+        padding: 2px 0;
+        vertical-align: top;
+      }
+
+      .itemtable { 
+        width: 100%; 
+        margin-top: 15px; 
+        border-collapse: collapse;
+      }
+      
+      .itemtable th {
+        background: #d9d9db; 
+        color: #333234;
+        text-transform: uppercase; 
+        font-size: 10px; 
+        font-weight: bold; 
+        padding: 8px 4px;
+        border: 1px solid #5b5b5b;
+        text-align: center;
+      }
+      
+      .itemtable td {
+        padding: 6px 4px;
+        border: 1px solid #5b5b5b;
+        vertical-align: top;
+        font-size: 9pt;
+      }
+
+      .totals-table { 
+        width: 100%; 
+        margin-top: 12px;
+      }
+      
+      .totals-table td { 
+        padding: 4px 8px; 
+        vertical-align: top;
+      }
+      
+      .total-row {
+        background-color: #e3e3e3; 
+        font-weight: bold;
+      }
+
+      .grid-table { 
+        border-collapse: collapse; 
+        width: 100%; 
+        margin-top: 15px;
+      }
+      
+      .grid-table td { 
+        border: 1px solid #333234; 
+        padding: 6px; 
+        font-size: 9pt;
+      }
+
+      .signature-section {
+        width: 100%; 
+        margin-top: 24px;
+      }
+      
+      .sig-line { 
+        border-bottom: 1px solid #333234; 
+        height: 18pt; 
+      }
+      
+      .sig-label { 
+        font-weight: bold; 
+        width: 25%;
+      }
+
+      .title-large { 
+        font-size: 11pt; 
+        font-weight: bold; 
+        text-align: center; 
+        margin: 15px 0;
+      }
+      
+      .title-medium { 
+        font-size: 10pt; 
+        font-weight: bold; 
+        text-align: center; 
+        margin: 10px 0;
+      }
+
+      .observation-box {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        font-size: 11px
+      }
+      
+      .terms-content {
+        padding: 8px;
+        margin-top: 8px;
+        font-size: 9pt;
+        line-height: 1.3;
+      }
+
+      .tc-box {
+        width: 100%;
+        border: 1pt solid #000;
+        border-collapse: collapse;
+        table-layout: fixed; 
+        margin: 0;
+        page-break-inside: auto;  
+      }
+            
+      .tc-col {
+        width: 50%;
+        vertical-align: top;
+        padding: 8pt;  /* Reducir padding para más espacio */
+        font-size: 8pt;  /* Reducir tamaño de fuente */
+        text-align: justify;
+        line-height: 11pt;  /* Reducir interlineado */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      .tc-col p { 
+        margin: 0 0 6pt 0;
+        page-break-inside: avoid;
+      }
+
+      .tc-col ul, .tc-col ol { margin: 0 0 6pt 18pt; }
+      .tc-col li { margin: 0 0 4pt 0; }
+      .tc-col .para { display: block; margin: 0 0 7pt 0; }
+      .tc-col br { line-height: 1.0; }
+      .tc-left { border-right: 0.5pt solid #666; }
+      .tc-title-1 { text-align: center; font-weight: bold; font-size: 12pt; margin: 0 0 4pt 0; }
+      .tc-title-2 { text-align: center; font-weight: bold; font-size: 11pt; margin: 0 0 6pt 0; }
+    </style>
+  </head>
+
+  <body header="nlheader" header-height="20pt" footer="nlfooter" footer-height="12pt"
+        padding="0.3in 0.3in 0.3in 0.3in" size="Letter">
+
+  <table class="top-grid">
+    <!-- Fila 1: logo (izq) + título (der) -->
+    <tr>
+      <td class="col-left">
+        <div class="brand-wrap">
+          <#if subsidiary.logo?length != 0>
+            <img src="${subsidiary.logo@url}" width="130" height="60"/>
+          </#if>
+        </div>
+      </td>
+      <td class="col-right">
+        <div class="title-box">
+          <span class="main-title">ORDEN DE SERVICIO Nº ${record.otherrefnum}</span>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Fila 2: datos empresa (izq) + contenedor gris (der) -->
+    <tr>
+      <td class="col-left">
+        <div class="company-box">
+          <#if subsidiary.legalname?has_content>
+            <b>${subsidiary.legalname?upper_case}</b><br/>
+          </#if>
+          <#if subsidiary.mainaddress_text?has_content>
+            ${subsidiary.mainaddress_text}
+          </#if>
+        </div>
+      </td>
+      <td class="col-right">
+        <table class="header-table">
+          <tr>
+            <td style="text-align:center;background:#f0f0f0;">
+              <b>ORDEN DE COMPRA</b><br/>
+              <span style="font-size:9pt;">${record.otherrefnum}</span>
+            </td>
+            <td><b>Fecha:</b><br/>${record.trandate?string["dd/MM/yyyy"]}</td>
+            <td><b>Moneda:</b><br/>${record.currency}</td>
+          </tr>
+          <tr>
+            <td><b>Condición de pago:</b><br/><#if record.terms?has_content>${record.terms}</#if></td>
+            <td><b>Tipo de compra:</b><br/><#if record.custbody_sam_tipo_compra?has_content>${record.custbody_sam_tipo_compra}</#if></td>
+            <td><b>Embarcar vía:</b><br/><#if record.custbody_sam_embarcar_via?has_content>${record.custbody_sam_embarcar_via}</#if></td>
+          </tr>
+          <tr>
+            <td colspan="3"><b>Comprador:</b> <#if record.custbody_sam_comprador?has_content>${record.custbody_sam_comprador}</#if></td>
+          </tr>
+          <tr>
+            <td colspan="3" style="background:#f8f8f8;">
+              <#if record.custbody_sam_glosa_cabecera?has_content>${record.custbody_sam_glosa_cabecera}</#if>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+    <!-- INFORMACIÓN DEL PROVEEDOR Y DIRECCIONES -->
+    <table style="width: 100%; margin-top: 10px;">
+      <tr>
+        <td width="33%" style="vertical-align: top;">
+          <table class="info-section">
+            <tr><td><b>PROVEEDOR:</b></td></tr>
+            <tr>
+              <td>
+                <#if record.entity.internalid?has_content><b>Cód:</b> ${record.entity.internalid}<br/></#if>
+                <b><#if record.entity.isperson==false && record.entity.companyname?has_content>${record.entity.companyname}<#elseif record.entity.isperson==true><#if record.entity.firstname?has_content>${record.entity.firstname}</#if><#if record.entity.custentity_gd_segundo_nombre?has_content> ${record.entity.custentity_gd_segundo_nombre}</#if><#if record.entity.lastname?has_content> ${record.entity.lastname}</#if><#if record.entity.custentity_gd_segundo_apellido?has_content> ${record.entity.custentity_gd_segundo_apellido}</#if></#if></b><br/>
+                <#if record.entity.custentity_gd_documento?has_content><b>RUC:</b> ${record.entity.custentity_gd_documento}<br/></#if>
+                <#if record.entity.billaddress1?has_content><b>Dirección:</b> ${record.entity.billaddress1}<br/></#if>
+                <#if record.entity.phone?has_content><b>Teléfono:</b> ${record.entity.phone}<br/></#if>
+                <#if record.entity.fax?has_content><b>Fax:</b> ${record.entity.fax}<br/></#if>
+                <#if record.entity?has_content><b>Contacto:</b> ${record.entity}<br/></#if>
+                <#if record.entity.email?has_content><b>Correo:</b> ${record.entity.email}</#if>
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <td width="60%" style="vertical-align: top; padding-left: 80px;">
+          <!-- EMBARCAR A -->
+          <table class="info-section" style="margin-bottom: 12px;  ">
+            <tr><td><b>EMBARCAR A:</b></td></tr>
+            <tr>
+              <td>
+                <#if subsidiary.shippingaddress_text?has_content>
+                  ${subsidiary.shippingaddress_text}
+                  <#if subsidiary.shippingaddress_text.addrphone?has_content><br/><b>Teléfono:</b> ${subsidiary.shippingaddress_text.addrphone}</#if>
+                <#else>
+                  ${subsidiary.mainaddress_text}
+                </#if>
+                <#if subsidiary.fax?has_content><br/><b>Fax:</b> ${subsidiary.fax}</#if>
+              </td>
+            </tr>
+          </table>
+          
+          <!-- FACTURAR A -->
+          <table class="info-section">
+            <tr><td><b>FACTURAR A:</b></td></tr>
+            <tr>
+              <td>
+                <#if subsidiary.custrecord_gd_sub_document_number?has_content>
+                  <b>RUC:</b> ${subsidiary.custrecord_gd_sub_document_number}<br/>
+                </#if>
+                <#if subsidiary.mainaddress_text?has_content>${subsidiary.mainaddress_text}</#if>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- OBSERVACIÓN GENERAL -->
+    <#if record.memo?has_content>
+      <div class="observation-box">
+        <b>Observación:</b> ${record.memo}
+      </div>
+    </#if>
+
+    <!-- TABLA DE ITEMS -->
+    <#if record.item?has_content>
+      <table class="itemtable">
+        <thead>
+          <tr>
+            <th width="5%">Pos</th>
+            <th width="12%">Code</th>
+            <th width="35%">Descripción</th>
+            <th width="8%">Cantidad</th>
+            <th width="6%">UM</th>
+            <th width="10%">Fe. Prom</th>
+            <th width="12%">Precio Unit.</th>
+            <th width="12%">Importe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <#list record.item as line>
+            <tr>
+              <td style="text-align: center;">${line_index + 1}</td>
+              <td><#if line.custcol_sam_nombre_cod_para_mostrar?has_content>${line.custcol_sam_nombre_cod_para_mostrar}</#if></td>
+              <td>
+                <b>${line.item}</b>
+                <#if line.memo?has_content>
+                  <br/><span style="font-size: 8pt;">${line.memo}</span>
+                </#if>
+              </td>
+              <td style="text-align: right;">${line.quantity?string.number}</td>
+              <td style="text-align: center;"><#if line.units?has_content>${line.units}</#if></td>
+              <td style="text-align: center;">
+                <#if line.expectedreceiptdate?has_content>
+                  ${line.expectedreceiptdate?string["dd/MM/yyyy"]}
+                </#if>
+              </td>
+              <td style="text-align: right;">${line.rate?string["#,##0.00"]}</td>
+              <td style="text-align: right;">${line.amount?string["#,##0.00"]}</td>
+            </tr>
+          </#list>
+        </tbody>
+      </table>
+    </#if>
+
+    <!-- CÁLCULO DE IMPUESTOS SIMPLIFICADO -->
+    <#assign curr = record.currency />
+    <#assign igvTotal = 0 />
+    <#assign detTotal = 0 />
+    <#assign reteTotal = 0 />
+    <#assign fiseTotal = 0 />
+
+    <#if record.taxtotal?has_content>
+      <#assign igvTotal = record.taxtotal />
+    </#if>
+
+    <!-- TOTALES -->
+    <table class="totals-table">
+      <tr>
+        <td width="60%" style="vertical-align: top;">
+          <#if record.custbody_gd_pe_monto_letras?has_content>
+            <b>Monto en letras:</b><br/>
+            ${record.custbody_gd_pe_monto_letras?upper_case}
+          </#if>
+        </td>
+        <td width="40%" style="vertical-align: top;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="text-align: right; padding: 4px;">Valor neto:</td>
+              <td style="text-align: right; padding: 4px; width: 35%;">${curr} ${record.subtotal?string["#,##0.00"]}</td>
+            </tr>
+            <#if igvTotal != 0>
+              <tr>
+                <td style="text-align: right; padding: 4px;">IGV:</td>
+                <td style="text-align: right; padding: 4px;">${curr} ${igvTotal?string["#,##0.00"]}</td>
+              </tr>
+            </#if>
+            <#if record.custbody_sam_fise?has_content && record.custbody_sam_fise != 0>
+              <tr>
+                <td style="text-align: right; padding: 4px;">FISE:</td>
+                <td style="text-align: right; padding: 4px;">${curr} ${record.custbody_sam_fise?string["#,##0.00"]}</td>
+              </tr>
+            </#if>
+            <tr class="total-row">
+              <td style="text-align: right; padding: 6px;">Importe Total:</td>
+              <td style="text-align: right; padding: 6px;"><b>${curr} ${record.total?string["#,##0.00"]}</b></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <pbr/>
+
+    <!-- INFORMACIÓN ADICIONAL -->
+    <table class="grid-table">
+      <tr>
+        <td width="30%"><b>N° de solped:</b></td>
+        <td width="70%"><#if record.tranid?has_content>${record.tranid}</#if></td>
+      </tr>
+      <tr>
+        <td><b>Solicitado por:</b></td>
+        <td><#if record.employee?has_content>${record.employee}</#if></td>
+      </tr>
+      <tr>
+        <td><b>Solped aprobada por:</b></td>
+        <td><#if record.custbody_sam_aprobacion_sol?has_content>${record.custbody_sam_aprobacion_sol}</#if></td>
+      </tr>
+      <tr>
+        <td><b>OC aprobada por:</b></td>
+        <td><#if record.custbody_sam_aprobacion_oc?has_content>${record.custbody_sam_aprobacion_oc}</#if></td>
+      </tr>
+      <tr>
+        <td><b>Estado:</b></td>
+        <td><#if record.custbody_sam_estado_aprob?has_content>${record.custbody_sam_estado_aprob}</#if></td>
+      </tr>
+    </table>
+
+    <#if subsidiary.custrecord__sam_glosa_espa?has_content>
+      <div class="terms-content">${subsidiary.custrecord__sam_glosa_espa}</div>
+    </#if>
+
+
+<#function fmtTerms s>
+  <#if !s?has_content><#return "&nbsp;"></#if>
+  <#assign txt = s?replace("\r\n", "\n")?replace("\r", "\n")>
+  <#-- Si ya tiene HTML, devolverlo tal cual -->
+  <#if txt?matches("(?is).*<[^>]+>.*")><#return txt></#if>
+  
+  <#-- Dividir por párrafos (doble salto de línea) -->
+  <#assign paragraphs = txt?split("\n\n+", "r")>
+  <#assign result = "">
+  
+  <#list paragraphs as p>
+    <#assign cleanP = p?replace("\n", " ")?trim>
+    <#if cleanP?has_content>
+      <#assign result += "<p style='margin:0 0 8pt 0; line-height:13pt; text-align:justify;'>" + cleanP?html + "</p>">
+    </#if>
+  </#list>
+  
+  <#if !result?has_content>
+    <#assign result = "<p style='margin:0 0 8pt 0; line-height:13pt; text-align:justify;'>" + txt?replace("\n", " ")?trim?html + "</p>">
+  </#if>
+  
+  <#return result>
+</#function>
+
+    <div style="page-break-before: auto;">
+        <table style="width:100%; margin:0 0 4pt 0;">
+          <tr><td class="tc-title-1">SAMAY I S.A.C. - TÉRMINOS Y CONDICIONES GENERALES PARA LA ADQUISICIÓN DE BIENES Y SERVICIOS</td></tr>
+          <tr><td class="tc-title-2">ORDEN DE COMPRA/SERVICIO N° ${record.otherrefnum}</td></tr>
+        </table>
+    </div>
+
+    <table class="tc-box" style="table-layout:fixed;">
+      <tr>
+        <td class="tc-col tc-left" style="width:49%;">
+          <#if subsidiary.custrecord_sam_terminos_condic_esp_h1c1?has_content>
+            <div style="overflow-wrap: anywhere; word-break: break-word;">
+              ${fmtTerms(subsidiary.custrecord_sam_terminos_condic_esp_h1c1)}
+            </div>
+          <#else>&nbsp;</#if>
+        </td>
+        <td class="tc-col" style="width:49%;">
+          <#if subsidiary.custrecord_sam_terminos_condic_esp_h1c2?has_content>
+            <div style="overflow-wrap: anywhere; word-break: break-word;">
+              ${fmtTerms(subsidiary.custrecord_sam_terminos_condic_esp_h1c2)}
+            </div>
+          <#else>&nbsp;</#if>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ====== HOJA 2 ====== -->
+    <pbr/>
+    <table class="tc-box" style="table-layout:fixed;">
+      <tr>
+        <td class="tc-col tc-left" style="width:49%;">
+          <#if subsidiary.custrecord_sam_terminos_condic_esp_h2c1?has_content>
+            <div style="overflow-wrap: anywhere; word-break: break-word;">
+              ${fmtTerms(subsidiary.custrecord_sam_terminos_condic_esp_h2c1)}
+            </div>
+          <#else>&nbsp;</#if>
+        </td>
+        <td class="tc-col" style="width:49%;">
+          <#if subsidiary.custrecord_sam_terminos_condic_esp_h2c2?has_content>
+            <div style="overflow-wrap: anywhere; word-break: break-word;">
+              ${fmtTerms(subsidiary.custrecord_sam_terminos_condic_esp_h2c2)}
+            </div>
+          <#else>&nbsp;</#if>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ====== HOJA 3 ====== -->
+    <pbr/>
+    <table class="tc-box" style="table-layout:fixed;">
+      <tr>
+        <td class="tc-col tc-left" style="width:49%;">
+          <#if subsidiary.custrecord_sam_terminos_condic_esp_h3c1?has_content>
+            <div style="overflow-wrap: anywhere; word-break: break-word;">
+              ${fmtTerms(subsidiary.custrecord_sam_terminos_condic_esp_h3c1)}
+            </div>
+          <#else>&nbsp;</#if>
+        </td>
+        <td class="tc-col" style="width:49%;">
+          <#if subsidiary.custrecord_sam_terminos_condic_esp_h3c2?has_content>
+            <div style="overflow-wrap: anywhere; word-break: break-word;">
+              ${fmtTerms(subsidiary.custrecord_sam_terminos_condic_esp_h3c2)}
+            </div>
+          <#else>&nbsp;</#if>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ====== HOJA 4 ====== -->
+    <pbr/>
+    <table class="tc-box" style="table-layout:fixed;">
+      <tr>
+        <td class="tc-col tc-left" style="width:49%;">
+          <#if subsidiary.custrecord_sam_terminos_condic_esp_h4c1?has_content>
+            <div style="overflow-wrap: anywhere; word-break: break-word;">
+              ${fmtTerms(subsidiary.custrecord_sam_terminos_condic_esp_h4c1)}
+            </div>
+          <#else>&nbsp;</#if>
+        </td>
+        <td class="tc-col" style="width:49%;">
+          <#if subsidiary.custrecord_sam_terminos_condic_esp_h4c2?has_content>
+            <div style="overflow-wrap: anywhere; word-break: break-word;">
+              ${fmtTerms(subsidiary.custrecord_sam_terminos_condic_esp_h4c2)}
+            </div>
+          <#else>&nbsp;</#if>
+        </td>
+      </tr>
+    </table>
+
+    <!-- ====== HOJA 5 ====== -->
+    <pbr/>
+    <table class="tc-box" style="table-layout:fixed;">
+      <tr>
+        <td class="tc-col tc-left" style="width:49%;">
+          <#if subsidiary.custrecord_sam_terminos_condic_esp_h5c1?has_content>
+            <div style="overflow-wrap: anywhere; word-break: break-word;">
+              ${fmtTerms(subsidiary.custrecord_sam_terminos_condic_esp_h5c1)}
+            </div>
+          <#else>&nbsp;</#if>
+        </td>
+        <td class="tc-col">&nbsp;</td>
+      </tr>
+    </table>
+    <!-- OTRA PÁGINA PARA ACEPTACIÓN -->
+    <pbr/>
+
+    <table style="width:100%; margin-top:24pt; border-collapse:collapse;">
+      <tr><td style="height:6pt;"></td></tr>
+      <tr>
+        <td align="center" style="font-size:11pt; font-weight:bold;">
+          ACEPTACIÓN - ORDEN N° ${record.otherrefnum}
+        </td>
+      </tr>
+    </table>
+
+    <table style="width: 100%; margin-top: 15px;">
+      <tr><td><b>SEÑORES:</b></td></tr>
+      <tr><td><#if subsidiary.legalname?has_content>${subsidiary.legalname}</#if></td></tr>
+      <#if record.location?has_content>
+        <tr><td>${record.location}</td></tr>
+      </#if>
+    </table>
+
+    <#if subsidiary.custrecord__sam_aceptacion_orden_espa?has_content>
+      <div class="terms-content">${subsidiary.custrecord__sam_aceptacion_orden_espa}</div>
+    </#if>
+
+    <!-- SECCIÓN DE FIRMAS -->
+    <table class="signature-section">
+      <tr><td class="sig-label">FIRMA Y SELLO:</td><td class="sig-line"></td></tr>
+      <tr><td height="18pt"></td><td></td></tr>
+      <tr><td class="sig-label">NOMBRE:</td><td class="sig-line"></td></tr>
+      <tr><td height="18pt"></td><td></td></tr>
+      <tr><td class="sig-label">CARGO:</td><td class="sig-line"></td></tr>
+      <tr><td height="18pt"></td><td></td></tr>
+      <tr><td class="sig-label">FECHA:</td><td class="sig-line"></td></tr>
+    </table>
+  </body>
+</pdf>
